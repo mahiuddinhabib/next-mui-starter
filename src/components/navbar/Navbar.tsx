@@ -83,7 +83,7 @@ function ResponsiveAppBar() {
   );
 
   return (
-    <AppBar position="static" component="nav">
+    <AppBar position="sticky" component="nav">
       <CssBaseline />
       <Container maxWidth="xl">
         <Toolbar disableGutters>
