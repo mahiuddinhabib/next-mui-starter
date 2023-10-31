@@ -37,7 +37,7 @@ const userOptions: { label: string; href: string }[] = [
   { label: "Dashboard", href: "/dashboard" },
 ];
 
-function ResponsiveAppBar() {
+function Navbar() {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false); //remove it when implementing authentication
@@ -222,4 +222,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default Navbar;
