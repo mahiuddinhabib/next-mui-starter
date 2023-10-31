@@ -15,7 +15,10 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Toolbar,
+  Typography,
 } from "@mui/material";
+import { Adb } from "@mui/icons-material";
 
 const drawerWidth = 240;
 const openedMixin = (theme: any) => ({
@@ -69,18 +72,26 @@ const Sidebar = () => {
         }),
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "flex-end",
-          padding: theme.spacing(0, 1),
-        }}
-      >
-        <IconButton onClick={handleDrawerToggle}>
-          {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-        </IconButton>
-      </Box>
+      <Toolbar disableGutters sx={{ mx: "auto" }}>
+        <Adb sx={{ mr: 1 }} />
+        <Typography
+          variant="h6"
+          noWrap
+          component="a"
+          href="#app-bar-with-responsive-menu"
+          sx={{
+            mr: 2,
+            display: open ? "flex" : "none",
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
+          LOGO
+        </Typography>
+      </Toolbar>
       <Divider />
       <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
@@ -131,6 +142,23 @@ const Sidebar = () => {
           </ListItem>
         ))}
       </List>
+      <Divider />
+      <Box
+        sx={{
+          display: "flex",
+          position: "absolute",
+          bottom: "0px",
+          width: "inherit",
+          backgroundColor: "inherit",
+          alignItems: "center",
+          justifyContent: open ? "end" : "center",
+          padding: theme.spacing(0, 1),
+        }}
+      >
+        <IconButton onClick={handleDrawerToggle}>
+          {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+        </IconButton>
+      </Box>
     </Drawer>
     // </Box>
   );

@@ -1,8 +1,9 @@
 "use client";
+import DashboardHeader from "@/components/ui/DashboardHeader";
 // import Contents from "@/components/ui/Contents";
 import SideBar from "@/components/ui/Sidebar";
 import { isLoggedIn } from "@/services/auth.service";
-import { AppBar, Box, Button, CircularProgress, Container, CssBaseline, Toolbar, Typography } from "@mui/material";
+import { Box, CircularProgress, Container, CssBaseline } from "@mui/material";
 // import { Layout, Row, Space, Spin } from "antd";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -32,14 +33,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       <CssBaseline />
       <SideBar />
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="sticky">
-          <Toolbar>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 ,}}>
-              Dashboard
-            </Typography>
-            <Button color="inherit">Login</Button>
-          </Toolbar>
-        </AppBar>
+        <DashboardHeader/>
         <Container maxWidth="lg">{children}</Container>
       </Box>
     </Box>
